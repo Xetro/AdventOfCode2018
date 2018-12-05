@@ -9,6 +9,7 @@ int* bitmap = NULL;
 size_t size_bitmap = 0;
 int* input = NULL;
 size_t size_input = 0;
+int count = 0;
 
 int freq = 0;
 int found = 0;
@@ -47,6 +48,7 @@ void adjustFreq(int change) {
     freq += change;
     if (checkBit(freq)) {
         printf("twice: %d\n", freq);
+        printf("%d\n", count);
         found = 1;
     } else {
         setBit(freq);
@@ -68,6 +70,9 @@ void setBit(int pos) {
                 bitmap[i - j] = 0;
             }
         }
+
+        count++;
+
         int k = 2 * (abs(pos) % 16);
 
         if (pos < 0) {
