@@ -32,4 +32,6 @@ void main() {
             word[i] = tmp;
         }
     }
+
+    ht_del_hash_table(ht);
 }
